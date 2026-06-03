@@ -11,4 +11,4 @@ Projeto desenvolvido para apresentar minhas habilidades em desenvolvimento front
 Este portfólio foi criado com foco em design moderno, responsividade e experiência do usuário.
 
 🌐 Acesse
-https://evely4.github.io/portif-lio-dev
+ https://github.com/Evely4/portfolio-dev
