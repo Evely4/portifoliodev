@@ -10,12 +10,10 @@
         :root { --bg-dark: #050509; --bg-card: rgba(10, 11, 20, 0.8); --primary: #00f2fe; --secondary: #4facfe; --accent: #ec4899; --text-main: #e2e8f0; --font-code: 'Roboto Mono', monospace; --font-body: 'Poppins', sans-serif; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; }
         #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; opacity: 0.4; }
         .ambient-glow { position: fixed; width: 80vw; height: 80vw; border-radius: 50%; background: radial-gradient(circle, rgba(79, 172, 254, 0.1) 0%, rgba(0, 0, 0, 0) 70%); z-index: -1; filter: blur(80px); pointer-events: none; }
-        .glow-1 { top: -20%; left: -20%; }
-        .glow-2 { bottom: -20%; right: -20%; background: radial-gradient(circle, rgba(236, 72, 153, 0.05) 0%, rgba(0, 0, 0, 0) 70%); }
-        #back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: rgba(10, 11, 20, 0.6); border: 1px solid var(--primary); color: var(--primary); border-radius: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; font-size: 20px; z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.4s ease; backdrop-filter: blur(10px); box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); }
+        #back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: rgba(10, 11, 20, 0.6); border: 1px solid var(--primary); color: var(--primary); border-radius: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.4s ease; backdrop-filter: blur(10px); }
         #back-to-top.visible { opacity: 1; visibility: visible; }
         .terminal-window { background: rgba(0, 0, 0, 0.8); border: 1px solid #333; border-radius: 8px; width: 100%; max-width: 800px; font-family: var(--font-code); box-shadow: 0 20px 50px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
         .terminal-header { background: #1a1a1a; padding: 10px; border-bottom: 1px solid #333; display: flex; gap: 6px; }
@@ -25,35 +23,29 @@
         .cmd { color: var(--primary); } .str { color: var(--accent); } .comment { color: #676e95; }
         h1.name { font-size: clamp(2rem, 6vw, 3.5rem); color: #fff; margin: 10px 0; text-shadow: 0 0 15px var(--primary); }
         .typing-cursor { display: inline-block; width: 8px; height: 1.2em; background: var(--primary); margin-left: 4px; animation: blink 1s infinite; vertical-align: middle; }
-        .robot-container { margin-top: 40px; position: relative; }
         .robot-container img { width: 180px; filter: drop-shadow(0 0 15px var(--primary)); animation: float 4s ease-in-out infinite; }
-        .robot-shadow { width: 100px; height: 20px; background: rgba(0, 242, 254, 0.2); border-radius: 50%; margin: -10px auto 0; filter: blur(8px); animation: shadow-float 4s ease-in-out infinite; }
         .scroll-down { position: absolute; bottom: 30px; font-size: 24px; color: #676e95; animation: bounce 2s infinite; text-decoration: none; }
         .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
         h2.section-title { font-family: var(--font-code); color: var(--primary); font-size: 24px; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
         h2.section-title::before { content: '=>'; color: var(--accent); }
-        h2.section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, #333, transparent); }
         section { margin-bottom: 80px; opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
         section.show { opacity: 1; transform: translateY(0); }
         .about-content { background: var(--bg-card); padding: 35px; border-radius: 12px; border: 1px solid #222; }
         .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
         .skill-tag { font-family: var(--font-code); font-size: 13px; background: rgba(0, 242, 254, 0.05); color: var(--secondary); padding: 8px 16px; border-radius: 4px; border: 1px solid rgba(0, 242, 254, 0.2); }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .project-card { background: var(--bg-card); border-radius: 12px; border: 1px solid #222; padding: 25px; transition: 0.4s; display: flex; flex-direction: column; }
-        .btn { padding: 12px 24px; border-radius: 6px; font-family: var(--font-code); font-size: 13px; text-transform: uppercase; border: 1px solid var(--primary); color: var(--primary); cursor: pointer; text-decoration: none; text-align: center; }
-        #lp-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f9fafb; z-index: 9999; display: none; overflow-y: auto; color: #333; }
+        .project-card { background: var(--bg-card); border-radius: 12px; border: 1px solid #222; padding: 25px; }
+        .btn { padding: 12px 24px; border-radius: 6px; font-family: var(--font-code); font-size: 13px; border: 1px solid var(--primary); color: var(--primary); cursor: pointer; text-decoration: none; display: inline-block; }
+        #lp-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 9999; display: none; overflow-y: auto; color: #333; }
         @keyframes blink { 50% { opacity: 0; } }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-        @keyframes shadow-float { 0%, 100% { transform: scale(1); opacity: 0.2; } 50% { transform: scale(0.8); opacity: 0.1; } }
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } }
     </style>
 </head>
 <body>
     <button id="back-to-top" onclick="window.scrollTo(0,0)">▲</button>
     <canvas id="particle-canvas"></canvas>
-    <div class="ambient-glow glow-1"></div>
-    <div class="ambient-glow glow-2"></div>
-
+    
     <header class="min-h-screen flex flex-col justify-center items-center p-5">
         <div class="terminal-window">
             <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
@@ -66,9 +58,8 @@
                 <div class="comment">// Engenharia da Computação | 10º Semestre</div>
             </div>
         </div>
-        <div class="robot-container">
+        <div class="robot-container mt-10">
             <img src="roob-removebg-preview.png" alt="Mascote Robô">
-            <div class="robot-shadow"></div>
         </div>
         <a href="#about" class="scroll-down">↓</a>
     </header>
@@ -77,7 +68,7 @@
         <section id="about">
             <h2 class="section-title">Sobre Mim</h2>
             <div class="about-content">
-                <p>Sou <b>graduanda em Engenharia da Computação pela UNIVESP</b> (10º semestre).</p>
+                <p>Sou <b>graduanda em Engenharia da Computação pela UNIVESP</b>.</p>
             </div>
         </section>
 
@@ -91,25 +82,38 @@
         <section id="projects">
             <h2 class="section-title">Projetos</h2>
             <div class="projects-grid">
-                <div class="project-card" style="grid-column: 1 / -1; border-color: var(--primary);">
-                    <h3 class="text-xl font-bold mb-4">Sistema de Monitoramento com Orquestração de Agentes de IA</h3>
+                <div class="project-card" style="border-color: var(--primary);">
+                    <h3 class="text-xl font-bold mb-4">Sistema de Monitoramento com Agentes IA</h3>
                     <p class="mb-4 text-sm text-gray-300">Ferramenta avançada para gestão de ciclo de vida e detecção de falhas.</p>
                     <a href="https://github.com/Evely4/-Projeto-Agentes-IA" class="btn">Ver Repositório</a>
                 </div>
-                <div class="project-card"><h3>Dashboard</h3><p>Análise de dados.</p></div>
-                <div class="project-card"><h3>Positivus</h3><p>Landing Page.</p></div>
+                <div class="project-card"><h3>Dashboard</h3><p>Análise de dados com gráficos interativos.</p></div>
+                <div class="project-card"><h3>Positivus</h3><p>Landing Page responsiva.</p></div>
+                <div class="project-card">
+                    <h3>Landing Page - Python e IA</h3>
+                    <button onclick="document.getElementById('lp-modal').style.display='block'" class="btn mt-4">Ver Projeto</button>
+                </div>
             </div>
         </section>
 
         <section id="contact">
             <h2 class="section-title">Contato</h2>
             <div class="about-content">
-                <p>Vamos conversar?</p>
+                <p>Estou em busca da minha primeira oportunidade em Tech. Vamos conversar?</p>
             </div>
         </section>
     </main>
 
+    <div id="lp-modal">
+        <button onclick="document.getElementById('lp-modal').style.display='none'" class="fixed top-5 right-5 bg-black text-white px-4 py-2 rounded">FECHAR [X]</button>
+        <div class="p-10 text-center">
+            <h1 class="text-4xl font-bold">Python & IA - Inscrições Abertas</h1>
+            <p class="mt-4 text-xl text-gray-600">Aprenda a metodologia prática para quem busca autonomia.</p>
+        </div>
+    </div>
+
     <script>
+        // Efeito Digitação
         const statusText = "Em busca da primeira oportunidade em Tech";
         let charIndex = 0;
         function typeStatus() {
@@ -120,12 +124,21 @@
             }
         }
         window.onload = typeStatus;
+
+        // Scroll
         window.addEventListener('scroll', () => {
             const btn = document.getElementById('back-to-top');
             if (window.scrollY > 400) btn.classList.add('visible');
             else btn.classList.remove('visible');
         });
-        // Observer para animação das seções
+
+        // Partículas
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.onresize = resize; resize();
+
+        // Animação de Scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
         }, { threshold: 0.1 });
@@ -133,5 +146,3 @@
     </script>
 </body>
 </html>
-
-```
