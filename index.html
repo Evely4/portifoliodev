@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -29,12 +29,14 @@
         .project-card { background: var(--bg-card); border-radius: 12px; border: 1px solid #222; padding: 25px; transition: 0.4s; }
         .project-card:hover { border-color: var(--secondary); box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
         .btn { display: inline-block; padding: 12px 24px; border-radius: 6px; font-family: var(--font-code); font-size: 13px; font-weight: 600; text-transform: uppercase; border: 1px solid var(--primary); color: var(--primary); cursor: pointer; text-decoration: none; }
+        .skill-tag { font-size: 12px; color: var(--secondary); margin-right: 10px; }
         @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
     <button id="back-to-top" onclick="window.scrollTo(0,0)">▲</button>
     <canvas id="particle-canvas"></canvas>
+    
     <header class="min-h-screen flex flex-col justify-center items-center p-5">
         <div class="terminal-window">
             <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
@@ -48,48 +50,31 @@
             </div>
         </div>
     </header>
-<section id="projects" class="container mx-auto px-5 mb-20">
-    <h2 class="section-title text-3xl text-primary font-bold mb-10">Projetos</h2>
-    <div class="projects-grid">
-        
-        <div class="project-card border-l-4 border-primary" style="grid-column: 1 / -1; background: rgba(10, 11, 20, 0.9);">
-            <h3 class="text-2xl font-bold mb-4 text-white">TCC: Sistema de Monitoramento com Orquestração de Agentes de IA</h3>
-            <div class="text-sm text-slate-300 space-y-4 mb-6">
-            <div class="flex gap-4">
-                <a href="https://github.com/Evely4/Monitoramento-Inteligente-TCC" target="_blank" class="btn btn-primary">Repositório TCC</a>
-                <a href="https://github.com/Evely4/-Projeto-Agentes-IA" target="_blank" class="btn btn-primary">Ver Agentes IA</a>
-            </div>
-        </div>
 
-        <div class="project-card">
-            <h3>Dashboard de Vendas</h3>
-            <p>Análise de dados com gráficos interativos.</p>
-            <a href="https://evely4.github.io/dashboard/" target="_blank" class="btn mt-4">Live Demo</a>
-        </div>
-
-        <div class="project-card">
-            <h3>Página Positivus</h3>
-            <p>Landing Page Neo-Brutalista com foco em UX/UI.</p>
-            <a href="https://maria-evely-positivus.netlify.app/" target="_blank" class="btn mt-4">Live Demo</a>
-        </div>
-
-    </div>
-</section>
     <main class="container mx-auto px-5">
         <section id="projects" class="mb-20">
             <h2 class="text-3xl text-primary font-bold mb-10">Projetos</h2>
             <div class="projects-grid">
-                <div class="project-card border-l-4 border-cyan-400">
-                    <h3 class="text-xl font-bold mb-4">Sistema de Monitoramento e Agentes IA</h3>
-                    <p class="mb-6 text-sm text-gray-300">Convergência entre Engenharia, Python e Automação Inteligente (RPA). Sistema de multi-agentes para monitoramento computacional.</p>
-                    <a href="https://github.com/Evely4/-Projeto-Agentes-IA/blob/main/README.md" target="_blank" class="btn">Ver Repositório</a>
+                <div class="project-card">
+                    <h3 class="text-xl font-bold mb-4">TCC: Sistema Inteligente de Monitoramento</h3>
+                    <p class="mb-6 text-sm text-gray-300">Ferramenta de monitoramento e predição de falhas validada em hardware físico (Lenovo i5).</p>
+                    <a href="https://github.com/Evely4/Monitoramento-Inteligente-TCC" target="_blank" class="btn">Ver Repositório</a>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-xl font-bold mb-4">Orquestração de Agentes IA</h3>
+                    <p class="mb-6 text-sm text-gray-300">Sistema multi-agentes para gestão do ciclo de vida de software.</p>
+                    <a href="https://github.com/Evely4/-Projeto-Agentes-IA" target="_blank" class="btn">Ver Projeto</a>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-xl font-bold mb-4">Dashboard de Vendas</h3>
+                    <p class="mb-6 text-sm text-gray-300">Dashboard de análise de dados com gráficos interativos.</p>
+                    <a href="https://evely4.github.io/dashboard/" target="_blank" class="btn">Live Demo</a>
                 </div>
             </div>
         </section>
     </main>
 
     <script>
-        // Typing effect
         const statusText = "Em busca da primeira oportunidade em Tech";
         let charIndex = 0;
         function typeStatus() {
@@ -100,15 +85,11 @@
             }
         }
         window.onload = typeStatus;
-
-        // Scroll fix
         window.addEventListener('scroll', () => {
             const btn = document.getElementById('back-to-top');
             if (window.scrollY > 400) btn.classList.add('visible');
-            else btn.classList.remove('visible'); // Corrigido aqui
+            else btn.classList.remove('visible');
         });
-
-        // Partículas (Simplificado para performance)
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
@@ -116,6 +97,4 @@
     </script>
 </body>
 </html>
-       
-
     
