@@ -24,17 +24,17 @@
         .terminal-body { padding: 20px; color: #a6accd; font-size: 14px; }
         .cmd { color: var(--primary); } .str { color: var(--accent); } .comment { color: #676e95; }
         h1.name { font-size: clamp(2rem, 6vw, 3.5rem); color: #fff; margin: 10px 0; text-shadow: 0 0 15px var(--primary); }
-        .typing-cursor { display: inline-block; width: 8px; height: 1.2em; background: var(--primary); margin-left: 4px; animation: blink 1s infinite; }
+        .typing-cursor { display: inline-block; width: 8px; height: 1.2em; background: var(--primary); margin-left: 4px; animation: blink 1s infinite; vertical-align: middle; }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .project-card { background: var(--bg-card); border-radius: 12px; border: 1px solid #222; padding: 25px; transition: 0.4s; }
-        .project-card:hover { border-color: var(--secondary); box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
-        .btn { display: inline-block; padding: 12px 24px; border-radius: 6px; font-family: var(--font-code); font-size: 13px; font-weight: 600; text-transform: uppercase; border: 1px solid var(--primary); color: var(--primary); cursor: pointer; text-decoration: none; }
-        .skill-tag { font-size: 12px; color: var(--secondary); margin-right: 10px; }
+        .btn { display: inline-block; padding: 12px 24px; border-radius: 6px; font-family: var(--font-code); font-size: 13px; font-weight: 600; text-transform: uppercase; border: 1px solid var(--primary); color: var(--primary); cursor: pointer; text-decoration: none; transition: 0.3s; }
+        .btn:hover { background: var(--primary); color: var(--bg-dark); box-shadow: 0 0 25px var(--primary); }
+        .skill-tag { font-size: 12px; color: var(--secondary); margin-right: 10px; border: 1px solid rgba(0, 242, 254, 0.2); padding: 4px 8px; border-radius: 4px; }
         @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
-    <button id="back-to-top" onclick="window.scrollTo(0,0)">▲</button>
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">▲</button>
     <canvas id="particle-canvas"></canvas>
     
     <header class="min-h-screen flex flex-col justify-center items-center p-5">
@@ -55,26 +55,17 @@
         <section id="projects" class="mb-20">
             <h2 class="text-3xl text-primary font-bold mb-10">Projetos</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <h3 class="text-xl font-bold mb-4">TCC: Sistema Inteligente de Monitoramento</h3>
-                    <p class="mb-6 text-sm text-gray-300">Ferramenta de monitoramento e predição de falhas validada em hardware físico (Lenovo i5).</p>
+                <div class="project-card border-l-4 border-primary">
+                    <h3 class="text-xl font-bold mb-4">TCC: Sistema de Monitoramento com Agentes IA</h3>
+                    <p class="mb-6 text-sm text-gray-300">Ferramenta de monitoramento validada em hardware físico utilizando Python, psutil e orquestração de multi-agentes para detecção de falhas.</p>
                     <a href="https://github.com/Evely4/Monitoramento-Inteligente-TCC" target="_blank" class="btn">Ver Repositório</a>
                 </div>
-                <div class="project-card">
-                    <h3 class="text-xl font-bold mb-4">Orquestração de Agentes IA</h3>
-                    <p class="mb-6 text-sm text-gray-300">Sistema multi-agentes para gestão do ciclo de vida de software.</p>
-                    <a href="https://github.com/Evely4/-Projeto-Agentes-IA" target="_blank" class="btn">Ver Projeto</a>
                 </div>
-                <div class="project-card">
-                    <h3 class="text-xl font-bold mb-4">Dashboard de Vendas</h3>
-                    <p class="mb-6 text-sm text-gray-300">Dashboard de análise de dados com gráficos interativos.</p>
-                    <a href="https://evely4.github.io/dashboard/" target="_blank" class="btn">Live Demo</a>
-                </div>
-            </div>
         </section>
     </main>
 
     <script>
+        // Typing Effect
         const statusText = "Em busca da primeira oportunidade em Tech";
         let charIndex = 0;
         function typeStatus() {
@@ -85,15 +76,15 @@
             }
         }
         window.onload = typeStatus;
+
+        // Scroll Button
         window.addEventListener('scroll', () => {
             const btn = document.getElementById('back-to-top');
             if (window.scrollY > 400) btn.classList.add('visible');
             else btn.classList.remove('visible');
         });
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-        window.onresize = resize; resize();
     </script>
 </body>
 </html>
+
+
