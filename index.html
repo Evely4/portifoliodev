@@ -47,7 +47,6 @@
 
         .terminal-body { padding: 20px; color: #a6accd; font-size: 14px; }
         .cmd { color: var(--primary); }
-        .str { color: var(--accent); }
         h1.name { font-size: 3rem; color: #fff; margin: 10px 0; }
 
         .robot-container { margin-top: 40px; text-align: center; }
@@ -57,13 +56,10 @@
 
         h2.section-title { color: var(--primary); font-size: 24px; margin-bottom: 30px; font-family: var(--font-code); }
 
-        .about-content { background: var(--bg-card); padding: 35px; border-radius: 12px; border: 1px solid #222; }
+        .about-content { background: var(--bg-card); padding: 35px; border-radius: 12px; border: 1px solid #222; margin-bottom: 30px; }
         
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .project-card { background: var(--bg-card); padding: 25px; border-radius: 12px; border: 1px solid #222; transition: 0.3s; }
-        .project-card:hover { border-color: var(--primary); }
-        
-        .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; color: var(--primary); border: 1px solid var(--primary); display: inline-block; margin-top: 15px; font-size: 12px; text-transform: uppercase; }
+        .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; color: var(--primary); border: 1px solid var(--primary); display: inline-block; margin-top: 15px; font-size: 12px; text-transform: uppercase; transition: 0.3s; }
+        .btn:hover { background: var(--primary); color: #000; }
     </style>
 </head>
 <body>
@@ -90,9 +86,8 @@
         <section id="about">
             <h2 class="section-title">=> Sobre Mim</h2>
             <div class="about-content">
-                <p>Sou <b>graduanda em Engenharia da Computação pela UNIVESP (10º semestre)</b>, focada em unir a lógica estruturada da engenharia à criatividade do desenvolvimento moderno. Minha técnica básica permite que eu transite entre hardware e software com precisão.</p>
-                <p>Além da formação técnica, sou Bacharel em Direito e Historiadora, o que me confere uma visão analítica diferenciada para a resolução de problemas complexos. Atualmente, utilizo Python, RPA e tecnologias Front-End para construir soluções móveis e inteligentes.</p>
-                <p>Atualmente, estou em busca da minha primeira oportunidade oficial na área de tecnologia.</p>
+                <p>Sou <b>graduanda em Engenharia da Computação pela UNIVESP (10º semestre)</b>, focada em unir a lógica estruturada da engenharia à criatividade do desenvolvimento moderno.</p>
+                <p>Além da formação técnica, sou Bacharel em Direito e Historiadora, o que me confere uma visão analítica diferenciada para a resolução de problemas complexos. Atualmente, utilizo Python, RPA e tecnologias Front-End.</p>
             </div>
         </section>
 
@@ -103,10 +98,12 @@
                 <p><b>Dados, Engenharia e IA:</b> Python, MySQL, Pandas, Matplotlib, Git e GitHub.</p>
             </div>
         </section>
-              <h3>Github</h3>
-                    <p>acompanhe meus projetos.</p>
-                    <a href="https://github.com/Evely4" target="_blank" class="btn">Ver Código</a>
-                </div>
+
+        <section id="github">
+            <h2 class="section-title">=> GitHub</h2>
+            <div class="about-content">
+                <p>Acompanhe meus projetos e códigos desenvolvidos diretamente no meu repositório.</p>
+                <a href="https://github.com/Evely4" target="_blank" class="btn">Ver Repositório</a>
             </div>
         </section>
     </main>
@@ -116,11 +113,10 @@
     </footer>
 
     <script>
-        // Script das partículas
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-        // (O código das partículas continua aqui...)
+        canvas.width = window.innerWidth; 
+        canvas.height = window.innerHeight;
     </script>
 </body>
 </html>
