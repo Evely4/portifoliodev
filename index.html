@@ -1,3 +1,8 @@
+Peço desculpas por ter resumido o seu texto e omitido os contatos. Reverti o texto do "Sobre Mim" para a versão original completa e incluí seus dados de contato conforme solicitado.
+
+Aqui está o código completo:
+
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -41,13 +46,13 @@
             100% { transform: translateY(0px); }
         }
 
-        section { margin-bottom: 50px; }
-        h2.section-title { color: var(--primary); font-size: 24px; margin-bottom: 20px; font-family: var(--font-code); }
-        .about-content { background: var(--bg-card); padding: 30px; border-radius: 15px; border: 1px solid #222; }
+        section { margin-bottom: 60px; }
+        h2.section-title { color: var(--primary); font-size: 24px; margin-bottom: 25px; font-family: var(--font-code); }
+        .about-content { background: var(--bg-card); padding: 40px; border-radius: 15px; border: 1px solid #222; }
         
         .btn { padding: 12px 24px; border-radius: 6px; text-decoration: none; color: var(--primary); border: 1px solid var(--primary); display: inline-block; margin-top: 20px; transition: 0.3s; }
         .btn:hover { background: var(--primary); color: #000; }
-        .contact-info { margin-top: 15px; font-size: 0.9em; color: #cbd5e1; }
+        .contact-item { margin-top: 10px; font-size: 1.1em; }
     </style>
 </head>
 <body>
@@ -73,26 +78,31 @@
         <section id="about">
             <h2 class="section-title">=> Sobre Mim</h2>
             <div class="about-content">
-                <p>Sou graduanda em Engenharia da Computação pela UNIVESP (10º semestre), focada em unir a lógica estruturada da engenharia à criatividade do desenvolvimento. <b>Atualmente, estou em busca da minha primeira oportunidade profissional na área de tecnologia.</b></p>
+                <p>Sou <b>graduanda em Engenharia da Computação pela UNIVESP (10º semestre)</b>, focada em unir a lógica estruturada da engenharia à criatividade do desenvolvimento moderno. Minha técnica básica permite que eu transite entre hardware e software com precisão.</p>
+                <p style="margin-top: 15px;">Além da formação técnica, sou Bacharel em Direito e Historiadora, o que me confere uma visão analítica diferenciada para a resolução de problemas complexos. Atualmente, utilizo Python, RPA e tecnologias Front-End para construir soluções móveis e inteligentes.</p>
+                <p style="margin-top: 15px;"><b>Atualmente, estou em busca da minha primeira oportunidade oficial na área de tecnologia.</b></p>
             </div>
         </section>
 
         <section id="skills">
             <h2 class="section-title">=> Conjunto de Tecnologias</h2>
             <div class="about-content">
-                <p><b>Front-End:</b> HTML5, CSS3, JS, React. | <b>Dados/Eng:</b> Python, MySQL, Git.</p>
+                <p><b>Front-End e Design:</b> HTML5, CSS3, JavaScript (ES6+), Bootstrap, React.js, Figma.</p>
+                <p><b>Dados, Engenharia e IA:</b> Python, MySQL, Pandas, Matplotlib, Git e GitHub.</p>
             </div>
         </section>
 
         <section id="contact">
             <h2 class="section-title">=> Contato</h2>
             <div class="about-content">
-                <p>Vamos conversar? Entre em contato comigo:</p>
-                <div class="contact-info">
-                    <p>📧 <b>Email:</b> evely-silva@hotmail.com</p>
-                    <p>📱 <b>WhatsApp:</b> (11) 96631-0602</p>
-                </div>
-                <h2 class="section-title" style="margin-top: 30px; font-size: 18px;">=> GitHub</h2>
+                <div class="contact-item">📧 <b>Email:</b> evely-silva@hotmail.com</div>
+                <div class="contact-item">📱 <b>WhatsApp:</b> (11) 96631-0602</div>
+            </div>
+        </section>
+
+        <section id="github">
+            <h2 class="section-title">=> GitHub</h2>
+            <div class="about-content">
                 <p>Acompanhe meus projetos e códigos desenvolvidos.</p>
                 <a href="https://github.com/Evely4" target="_blank" class="btn">Ver Repositório</a>
             </div>
@@ -104,3 +114,5 @@
     </footer>
 </body>
 </html>
+
+```
