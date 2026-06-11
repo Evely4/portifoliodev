@@ -20,9 +20,8 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 
-        /* Estilo da janela terminal */
         .terminal-window { background: rgba(0, 0, 0, 0.8); border: 1px solid #333; border-radius: 8px; width: 100%; max-width: 700px; margin: 0 auto; font-family: var(--font-code); }
         .terminal-header { background: #1a1a1a; padding: 10px; border-bottom: 1px solid #333; display: flex; gap: 6px; }
         .dot { width: 12px; height: 12px; border-radius: 50%; }
@@ -30,7 +29,6 @@
         .terminal-body { padding: 20px; color: #a6accd; }
         .cmd { color: var(--primary); }
 
-        /* Animação do Robô */
         .robot-container { margin: 60px 0; text-align: center; }
         .robot-container img { 
             width: 180px; 
@@ -43,13 +41,13 @@
             100% { transform: translateY(0px); }
         }
 
-        /* Espaçamento dos containers */
         section { margin-bottom: 50px; }
         h2.section-title { color: var(--primary); font-size: 24px; margin-bottom: 20px; font-family: var(--font-code); }
-        .about-content { background: var(--bg-card); padding: 40px; border-radius: 15px; border: 1px solid #222; }
+        .about-content { background: var(--bg-card); padding: 30px; border-radius: 15px; border: 1px solid #222; }
         
         .btn { padding: 12px 24px; border-radius: 6px; text-decoration: none; color: var(--primary); border: 1px solid var(--primary); display: inline-block; margin-top: 20px; transition: 0.3s; }
         .btn:hover { background: var(--primary); color: #000; }
+        .contact-info { margin-top: 15px; font-size: 0.9em; color: #cbd5e1; }
     </style>
 </head>
 <body>
@@ -75,7 +73,7 @@
         <section id="about">
             <h2 class="section-title">=> Sobre Mim</h2>
             <div class="about-content">
-                <p>Sou graduanda em Engenharia da Computação pela UNIVESP, unindo lógica estruturada à criatividade do desenvolvimento.</p>
+                <p>Sou graduanda em Engenharia da Computação pela UNIVESP (10º semestre), focada em unir a lógica estruturada da engenharia à criatividade do desenvolvimento. <b>Atualmente, estou em busca da minha primeira oportunidade profissional na área de tecnologia.</b></p>
             </div>
         </section>
 
@@ -86,10 +84,16 @@
             </div>
         </section>
 
-        <section id="github">
-            <h2 class="section-title">=> GitHub</h2>
+        <section id="contact">
+            <h2 class="section-title">=> Contato</h2>
             <div class="about-content">
-                <p>Veja meus projetos no GitHub.</p>
+                <p>Vamos conversar? Entre em contato comigo:</p>
+                <div class="contact-info">
+                    <p>📧 <b>Email:</b> evely-silva@hotmail.com</p>
+                    <p>📱 <b>WhatsApp:</b> (11) 96631-0602</p>
+                </div>
+                <h2 class="section-title" style="margin-top: 30px; font-size: 18px;">=> GitHub</h2>
+                <p>Acompanhe meus projetos e códigos desenvolvidos.</p>
                 <a href="https://github.com/Evely4" target="_blank" class="btn">Ver Repositório</a>
             </div>
         </section>
