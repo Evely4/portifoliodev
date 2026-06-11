@@ -12,59 +12,47 @@
             --bg-dark: #050509;
             --bg-card: rgba(10, 11, 20, 0.8);
             --primary: #00f2fe;
-            --secondary: #4facfe;
-            --accent: #ec4899;
             --text-main: #e2e8f0;
             --font-code: 'Roboto Mono', monospace;
             --font-body: 'Poppins', sans-serif;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.6;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
 
-        #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; opacity: 0.4; }
-
-        .terminal-window {
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid #333;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 800px;
-            font-family: var(--font-code);
-            margin: 0 auto;
-        }
-
+        /* Estilo da janela terminal */
+        .terminal-window { background: rgba(0, 0, 0, 0.8); border: 1px solid #333; border-radius: 8px; width: 100%; max-width: 700px; margin: 0 auto; font-family: var(--font-code); }
         .terminal-header { background: #1a1a1a; padding: 10px; border-bottom: 1px solid #333; display: flex; gap: 6px; }
         .dot { width: 12px; height: 12px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-
-        .terminal-body { padding: 20px; color: #a6accd; font-size: 14px; }
+        .terminal-body { padding: 20px; color: #a6accd; }
         .cmd { color: var(--primary); }
-        h1.name { font-size: 3rem; color: #fff; margin: 10px 0; }
 
-        .robot-container { margin-top: 40px; text-align: center; }
-        .robot-container img { width: 180px; filter: drop-shadow(0 0 15px var(--primary)); }
+        /* Animação do Robô */
+        .robot-container { margin: 60px 0; text-align: center; }
+        .robot-container img { 
+            width: 180px; 
+            filter: drop-shadow(0 0 15px var(--primary));
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
 
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
-
-        h2.section-title { color: var(--primary); font-size: 24px; margin-bottom: 30px; font-family: var(--font-code); }
-
-        .about-content { background: var(--bg-card); padding: 35px; border-radius: 12px; border: 1px solid #222; margin-bottom: 30px; }
+        /* Espaçamento dos containers */
+        section { margin-bottom: 50px; }
+        h2.section-title { color: var(--primary); font-size: 24px; margin-bottom: 20px; font-family: var(--font-code); }
+        .about-content { background: var(--bg-card); padding: 40px; border-radius: 15px; border: 1px solid #222; }
         
-        .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; color: var(--primary); border: 1px solid var(--primary); display: inline-block; margin-top: 15px; font-size: 12px; text-transform: uppercase; transition: 0.3s; }
+        .btn { padding: 12px 24px; border-radius: 6px; text-decoration: none; color: var(--primary); border: 1px solid var(--primary); display: inline-block; margin-top: 20px; transition: 0.3s; }
         .btn:hover { background: var(--primary); color: #000; }
     </style>
 </head>
 <body>
-
-    <canvas id="particle-canvas"></canvas>
 
     <header>
         <div class="terminal-window" style="margin-top: 50px;">
@@ -73,10 +61,11 @@
             </div>
             <div class="terminal-body">
                 <div><span class="cmd">evely@univesp:~$</span> nano profile.json</div>
-                <h1 class="name">Evely Silva</h1>
-                <div class="comment">// Engenharia da Computação | 10º Semestre</div>
+                <h1>Evely Silva</h1>
+                <p>// Engenharia da Computação | 10º Semestre</p>
             </div>
         </div>
+        
         <div class="robot-container">
             <img src="roob-removebg-preview.png" alt="Mascote Robô">
         </div>
@@ -86,37 +75,28 @@
         <section id="about">
             <h2 class="section-title">=> Sobre Mim</h2>
             <div class="about-content">
-                <p>Sou <b>graduanda em Engenharia da Computação pela UNIVESP (10º semestre)</b>, focada em unir a lógica estruturada da engenharia à criatividade do desenvolvimento moderno.</p>
-                <p>Além da formação técnica, sou Bacharel em Direito e Historiadora, o que me confere uma visão analítica diferenciada para a resolução de problemas complexos. Atualmente, utilizo Python, RPA e tecnologias Front-End.</p>
+                <p>Sou graduanda em Engenharia da Computação pela UNIVESP, unindo lógica estruturada à criatividade do desenvolvimento.</p>
             </div>
         </section>
 
         <section id="skills">
             <h2 class="section-title">=> Conjunto de Tecnologias</h2>
             <div class="about-content">
-                <p><b>Front-End e Design:</b> HTML5, CSS3, JavaScript (ES6+), Bootstrap, React.js, Figma.</p>
-                <p><b>Dados, Engenharia e IA:</b> Python, MySQL, Pandas, Matplotlib, Git e GitHub.</p>
+                <p><b>Front-End:</b> HTML5, CSS3, JS, React. | <b>Dados/Eng:</b> Python, MySQL, Git.</p>
             </div>
         </section>
 
         <section id="github">
             <h2 class="section-title">=> GitHub</h2>
             <div class="about-content">
-                <p>Acompanhe meus projetos e códigos desenvolvidos diretamente no meu repositório.</p>
+                <p>Veja meus projetos no GitHub.</p>
                 <a href="https://github.com/Evely4" target="_blank" class="btn">Ver Repositório</a>
             </div>
         </section>
     </main>
 
-    <footer style="text-align: center; padding: 40px; color: #475569; font-family: var(--font-code);">
+    <footer style="text-align: center; padding: 40px; color: #475569;">
         &copy; 2026 // Desenvolvido por Evely Silva
     </footer>
-
-    <script>
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth; 
-        canvas.height = window.innerHeight;
-    </script>
 </body>
 </html>
